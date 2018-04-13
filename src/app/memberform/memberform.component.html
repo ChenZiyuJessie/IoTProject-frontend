@@ -1,0 +1,29 @@
+<h3>Create new member</h3>
+<div class="row">
+  <form [formGroup]="registerForm" class="col s12">
+    <div class="form-group">
+      <div class="row">
+        <div class="input-field col s6">
+          <input formControlName="room" id="room" type="text" class="form-control">
+          <label for="Username">Room</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="row">
+        <div class="input-field col s6">
+          <input formControlName="username" id="username" type="text" class="form-control">
+          <label for="Username">Username</label>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+    <div class="form-group">
+    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+    </button>
+    <a class="waves-effect waves-light btn">Cancle</a>
+    </div>
+    </div>
+  </form>
+</div>
