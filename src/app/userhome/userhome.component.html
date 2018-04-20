@@ -1,42 +1,28 @@
 <div class="card">
   <div class="card-body">
-    <h5 class="card-title">Hello, {{username}}!</h5>
+    <h5 class="card-title">Hello,{{username}}!</h5>
     <a class="btn btn btn-primary" role="button" (click)="logout()">Logout</a>
   </div>
 </div>
-<div class="memberlist-content">
-  <a class="btn-floating btn-large waves-effect waves-light red">
-    <i class="material-icons" [routerLink]="'member'">Add</i>
-  </a>
-<table>
+
+<h1>Member List
+  <a [routerLink]="['/member-create']" class="waves-effect waves-light btn" (click)="member()">Create</a>
+</h1>
+
+<table class="highlight"> 
   <thead>
     <tr>
-      <th>Room</th>
-      <th>Member</th>
-      <th>Balance</th>
-      <th>Volume</th>
-      <th>Switch</th>
-      <th>Credit</th>
+      <th>Room number</th>
+      <th>Member name</th>
+      <th>Show Detail</th>
     </tr>
   </thead>
 
   <tbody>
-    <tr>
-      <td>B612</td>
-      <td>Eclair</td>
-      <td>{{a | currency:'THB'}}</td>
-      <td>200</td>
-      <td><div class="switch">
-        <label>
-          Off
-          <input type="checkbox">
-          <span class="lever"></span>
-          On
-        </label>
-      </div></td>
-      <td><a class="waves-effect waves-light btn">TopUp</a></td>
+    <tr *ngFor="let member of members">
+      <td>{{member.room}}</td>
+      <td>{{member.name}}</td>
+      <td><a [routerLink]="['/member-details',member._id]"> Show Detail</a></td>
     </tr>
   </tbody>
 </table>
-</div>
-
