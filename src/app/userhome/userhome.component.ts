@@ -12,7 +12,6 @@ import { HttpClient } from '@angular/common/http';
 export class UserhomeComponent implements OnInit {
 
   username: String = '';
-  members:any;
 
   constructor(private _user: UserService, private _router: Router, private http:HttpClient) {
     this._user.user()
@@ -36,14 +35,7 @@ export class UserhomeComponent implements OnInit {
       );
     }
 
-  member(){
-    this.http.get('/user').subscribe
-      (data => {
-        console.log(data);
-        this.members=data;
-
-    });
   
   }  
 
-}
+

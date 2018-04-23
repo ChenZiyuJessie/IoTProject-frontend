@@ -1,0 +1,49 @@
+<h2>Edit Member</h2>
+
+<div class="colum">
+  <form class="col s12"(ngSubmit)="editMemberForm(member._id)" >
+    <div class="form-group">
+      <div class="colum">
+        <div class="input-field col s6">
+          <input id="room" type="text" name="room" formControlName="room">
+          <label for="room">Room</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="input-field col s6">
+          <input id="member_name" type="text" name="membername" formControlName="membername" class="form-control">
+          <label for="member_name">MemberName</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="colum">
+        <div class="input-field col s6">
+          <input id="email" type="email" name="email" formControlName="email" class="form-control">
+          <label for="email">Email</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="input-field col s6">
+          <input id="telephone" type="tel" name="tel" formControlName="tel" class="form-control">
+          <label for="telephone">Telephone</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="input-field col s12">
+          <input id="password" type="password" class="form-control" name="password" forControlName="password">
+          <label for="password">Password</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <button class="btn waves-effect waves-light" type="submit"  [disabled]="!memberForm.form.valid">Update</button>
+    </div>
+  </form>
+
+</div>

@@ -5,24 +5,28 @@
   </div>
 </div>
 
-<h1>Member List
-  <a [routerLink]="['/member-create']" class="waves-effect waves-light btn" (click)="member()">Create</a>
-</h1>
+<div class="row">
+  <div class="col-12.col-md-8">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+        <span class="card-title">View Member Table</span>
+      </div>
+      <div class="card-action">
+        <a [routerLink]="['/member']">This is a link</a>
+      </div>
+    </div>
+  </div>
+</div>
 
-<table class="highlight"> 
-  <thead>
-    <tr>
-      <th>Room number</th>
-      <th>Member name</th>
-      <th>Show Detail</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr *ngFor="let member of members">
-      <td>{{member.room}}</td>
-      <td>{{member.name}}</td>
-      <td><a [routerLink]="['/member-details',member._id]"> Show Detail</a></td>
-    </tr>
-  </tbody>
-</table>
+<div class="row">
+  <div class="col-12.col-md-8">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+        <span class="card-title">Report</span>
+      </div>
+      <div class="card-action">
+        <a href="#">This is a link</a>
+      </div>
+    </div>
+  </div>
+</div>

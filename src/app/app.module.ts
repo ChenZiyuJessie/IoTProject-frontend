@@ -9,9 +9,13 @@ import { AppRoutingModule } from './/app-routing.module';
 import { UserService } from "./user.service";
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './navbar/navbar.component';
-import { MemberCreateComponent } from './member-create/member-create.component';
-import { MemberDetailComponent } from './member-detail/member-detail.component';
-import { MemberEditComponent } from './member-edit/member-edit.component';
+import { MemberComponent } from './member/member.component';
+import { ReportComponent } from './report/report.component';
+import { MemberService } from './member/member.service';
+import { MemberaddComponent } from './member/memberadd/memberadd.component';
+import { MembereditComponent } from './member/memberedit/memberedit.component';
+import { MemberdetailComponent } from './member/memberdetail/memberdetail.component';
+
 
 
 
@@ -24,9 +28,12 @@ import { MemberEditComponent } from './member-edit/member-edit.component';
     LoginComponent,
     RegisterComponent,
     NavbarComponent,
-    MemberCreateComponent,
-    MemberDetailComponent,
-    MemberEditComponent
+    MemberComponent,
+    ReportComponent,
+    MemberaddComponent,
+    MembereditComponent,
+    MemberdetailComponent
+  
   
 
   ],
@@ -39,7 +46,8 @@ import { MemberEditComponent } from './member-edit/member-edit.component';
   
 
   ],
-  providers: [UserService],
+  providers: [UserService,
+              MemberService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
