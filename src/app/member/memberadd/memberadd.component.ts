@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
+import { MemberService } from '../member.service';
 
 @Component({
   selector: 'app-memberadd',
@@ -17,8 +18,9 @@ export class MemberaddComponent implements OnInit {
     password:new FormControl(null,Validators.required)
   })
 
-  constructor(private forBuilder:FormBuilder,
-              private router:Router) { }
+  constructor(private formBuilder:FormBuilder,
+              private _route:Router,
+              private _memberService:MemberService) { }
 
   ngOnInit() {
   }
@@ -28,6 +30,11 @@ export class MemberaddComponent implements OnInit {
       console.log('Invalid'); return;
     }
 
+    this._memberService.memberadd(JSON.stringify(this.addMemberForm.value))
+      .subscribe(
+        data => { console.log(data); this._route.navigate(['member']); },
+        error => console.error(error)
+      )
     
-  }
+      }
 }
