@@ -11,10 +11,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MemberComponent } from './member/member.component';
 import { ReportComponent } from './report/report.component';
-import { MemberService } from './member/member.service';
-import { MemberaddComponent } from './member/memberadd/memberadd.component';
-import { MembereditComponent } from './member/memberedit/memberedit.component';
-import { MemberdetailComponent } from './member/memberdetail/memberdetail.component';
+import { MemberService } from './member.service';
+import { MemberaddComponent } from './memberadd/memberadd.component';
+import { MembereditComponent } from './memberedit/memberedit.component';
+import { MemberdetailComponent } from './memberdetail/memberdetail.component';
 
 
 

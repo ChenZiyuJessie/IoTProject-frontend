@@ -4,9 +4,9 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { UserhomeComponent } from './userhome/userhome.component';
 import { MemberComponent } from './member/member.component';
-import { MemberaddComponent } from './member/memberadd/memberadd.component';
-import { MemberdetailComponent } from './member/memberdetail/memberdetail.component';
-import { MembereditComponent } from './member/memberedit/memberedit.component';
+import { MemberaddComponent } from './memberadd/memberadd.component';
+import { MembereditComponent } from './memberedit/memberedit.component';
+import { MemberdetailComponent } from './memberdetail/memberdetail.component';
 
 
 
@@ -17,7 +17,7 @@ const routes: Routes = [
     { path: 'user', component: UserhomeComponent },
     { path: 'member',component: MemberComponent},
     { path:'memberadd',component:MemberaddComponent},
-    { path:'memberdetial',component:MemberdetailComponent},
+    { path:'memberdetail',component:MemberdetailComponent},
     { path:'memberedit',component:MembereditComponent}
     
 ];

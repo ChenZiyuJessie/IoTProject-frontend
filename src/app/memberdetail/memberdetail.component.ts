@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { MemberService } from '../member.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-memberdetail',
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MemberdetailComponent implements OnInit {
 
-  constructor() { }
+  members=[];
+
+  constructor(private http:HttpClient,private _member:MemberService ,private route:Router) { }
 
   ngOnInit() {
+
   }
 
 }
