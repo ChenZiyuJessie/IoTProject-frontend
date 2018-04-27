@@ -11,9 +11,9 @@ import { MemberService } from '../member.service';
 export class MemberaddComponent implements OnInit {
 
   addMemberForm: FormGroup = new FormGroup({
-    room: new FormControl(null, Validators.required),
+    room: new FormControl( null,Validators.required),
     membername: new FormControl(null, Validators.required),
-    email: new FormControl(null, Validators.required),
+    email: new FormControl(null,Validators.required),
     tel:new FormControl(null,Validators.required),
     password:new FormControl(null,Validators.required)
   })
@@ -32,7 +32,7 @@ export class MemberaddComponent implements OnInit {
 
     this._memberService.memberadd(JSON.stringify(this.addMemberForm.value))
       .subscribe(
-        data => { console.log(data); this._route.navigate(['member']); },
+        data => { console.log(data); this._route.navigate(['/member']); },
         error => console.error(error)
       )
     

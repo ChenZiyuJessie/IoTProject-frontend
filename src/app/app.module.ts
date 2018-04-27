@@ -14,7 +14,7 @@ import { ReportComponent } from './report/report.component';
 import { MemberService } from './member.service';
 import { MemberaddComponent } from './memberadd/memberadd.component';
 import { MembereditComponent } from './memberedit/memberedit.component';
-import { MemberdetailComponent } from './memberdetail/memberdetail.component';
+
 
 
 
@@ -31,8 +31,8 @@ import { MemberdetailComponent } from './memberdetail/memberdetail.component';
     MemberComponent,
     ReportComponent,
     MemberaddComponent,
-    MembereditComponent,
-    MemberdetailComponent
+    MembereditComponent
+
   
   
 

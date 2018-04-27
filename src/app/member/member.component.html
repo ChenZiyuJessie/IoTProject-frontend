@@ -1,6 +1,6 @@
 <div class="container">
   <h1>Member List
-    <a [routerLink]="['/memberadd']" class="btn btn-default btn-lg">
+  <a [routerLink]="['/memberadd']" class="btn btn-default btn-lg">
       Add Member
     </a>
   </h1>
@@ -9,21 +9,18 @@
       <tr>
         <th>Room</th>
         <th>Member Name</th>
-        <th>Credit</th>
-        <th>Volume</th>
-        <th>Show detail</th>
+        <th>Email</th>
+        <th>Telephone</th>
+       
       </tr>
     </thead>
-    
     <tbody>
       <tr *ngFor="let member of members">
         <td>{{ member.room }}</td>
         <td>{{ member.membername}}</td>
-        <td>{{ member.credit}}</td>
-        <td>{{ member.volume}}</td>
-        <td>
-          <a [routerLink]="['/memberdetail', member._id]">Show Detail</a>
-        </td>
+        <td>{{ member.email}}</td>
+        <td>{{ member.tel}}</td>
+      
       </tr>
     </tbody>
   </table>
