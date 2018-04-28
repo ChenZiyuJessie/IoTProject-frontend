@@ -7,19 +7,23 @@
   <table class="table">
     <thead>
       <tr>
+        <th>ID</th>
         <th>Room</th>
-        <th>Member Name</th>
+        <th>MemberName</th>
         <th>Email</th>
         <th>Telephone</th>
-       
+        <th>Operations</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let member of members">
+        <td>{{ member._id}}</td>
         <td>{{ member.room }}</td>
         <td>{{ member.membername}}</td>
         <td>{{ member.email}}</td>
         <td>{{ member.tel}}</td>
+        <td><a class="waves-effect waves-teal btn-flat">Update</a>
+        <a class="waves-effect waves-teal btn-flat">Delete</a></td>
       
       </tr>
     </tbody>
