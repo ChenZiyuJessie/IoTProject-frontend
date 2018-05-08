@@ -1,53 +1,53 @@
-<h3>Add Member</h3>
+
 <div class="row">
   <form [formGroup]="addMemberForm" class="col s12" (ngSubmit)="addMemberForm()">
-    <div class="form-group">
+   
       <div class="row">
         <div class="input-field col s6">
-          <input formControlName="room" id="room" type="text" class="form-control">
+          <input formControlName="room" name="room" type="text" class="form-control">
           <label for="room">Room</label>
         </div>
       </div>
-    </div>
+    
 
-    <div class="form-group">
+   
       <div class="row">
         <div class="input-field col s6">
-          <input formControlName="membername" id="membername" type="text" class="form-control">
+          <input formControlName="membername" name="membername" type="text" class="form-control">
           <label for="Membername">Member Name</label>
         </div>
       </div>
-    </div>
+    
 
-    <div class="form-group">
+   
       <div class="row">
         <div class="input-field col s6">
-          <input formControlName="email" id="email" type="text" class="form-control">
+          <input formControlName="email" name="email" type="text" class="form-control">
           <label for="email">Email</label>
         </div>
       </div>
-    </div>
+    
 
-    <div class="form-group">
+    
       <div class="row">
         <div class="input-field col s6">
-          <input formControlName="tel" id="tel" type="text" class="form-control">
+          <input formControlName="tel" name="tel" type="text" class="form-control">
           <label for="tel">Telephone</label>
         </div>
       </div>
-    </div>
+  
 
 
-    <div class="form-group">
+   
       <div class="row">
         <div class="input-field col s6">
-          <input formControlName="password" id="password" type="password" class="form-control">
+          <input formControlName="password" name="password" type="password" class="form-control">
           <label for="password">Password</label>
         </div>
       </div>
-    </div>
+   
 
-    <div class="form-group">
+    
       <div class="row">
       <button class="btn waves-effect waves-light" type="button" (click)="memberadd()">Add
       </button>
@@ -57,6 +57,6 @@
       </div>
 
 
-    </div>
+    
   </form>
 </div>

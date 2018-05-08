@@ -16,11 +16,6 @@ import { MemberaddComponent } from './memberadd/memberadd.component';
 
 
 
-
-
-
-
-
 @NgModule({
   declarations: [
     AppComponent,

@@ -22,8 +22,7 @@
         <td>{{ member.membername}}</td>
         <td>{{ member.email}}</td>
         <td>{{ member.tel}}</td>
-        <td><a class="waves-effect waves-teal btn-flat">Update</a>
-        <a class="waves-effect waves-teal btn-flat">Delete</a></td>
+        <td><a class="waves-effect waves-light btn-small" (click)="doDelete(member)" >Delete</a></td>
       
       </tr>
     </tbody>
