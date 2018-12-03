@@ -1,30 +1,117 @@
-<div class="container">
-  <h1>Member List
-  <a [routerLink]="['/memberadd']" class="btn btn-default btn-lg">
-      Add Member
-    </a>
-  </h1>
-  <table class="table">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Room</th>
-        <th>MemberName</th>
-        <th>Email</th>
-        <th>Telephone</th>
-        <th>Operations</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let member of members">
-        <td>{{ member._id}}</td>
-        <td>{{ member.room }}</td>
-        <td>{{ member.membername}}</td>
-        <td>{{ member.email}}</td>
-        <td>{{ member.tel}}</td>
-        <td><a class="waves-effect waves-light btn-small" (click)="doDelete(member)" >Delete</a></td>
-      
-      </tr>
-    </tbody>
-  </table>
+<div el-container direction="vertical" class="demo-box">
+  <div el-header><h3>Member List</h3></div><br>
+  <div>
+  <el-button type="warning" (click)="addMember()">Member Add</el-button>
+  </div>
+  <el-table [model]="tableData" [scroll-x]="true" center="all">
+
+    <el-table-column model-key="room" label="Room">
+    </el-table-column>
+    <el-table-column model-key="membername" label="Name" width="100">
+    </el-table-column>
+    <el-table-column model-key="mail" label="Email">
+    </el-table-column>
+    <el-table-column model-key="tel" label="Telephone" width="100">
+    </el-table-column>
+    <el-table-column model-key="creation_dt" label="CreatTime" width="120">
+    </el-table-column>
+    <el-table-column model-key="credit" label="Credit">
+    </el-table-column>
+    <el-table-column label="Operations" width="120">
+      <ng-template #slot let-scope="scope">
+<el-button [plain]="true" type="warning" size="small"  (click)="doDelete(scope)">Delete</el-button><br>
+<el-button [plain]="true" type="success" size="small"  (click)="showTopupForm(scope)">Topup</el-button><br>
+<el-button [plain]="true" type="danger" size="small"  (click)="showUpdateForm(scope)">Update</el-button>
+      </ng-template>
+    </el-table-column>
+  </el-table>
+
+<div class="box-card" #card>
+<el-dialog [title]="'Topup Credit'" [(visible)]="topupForm">
+<el-form [formGroup]="addMemberForm" label-width="100px" [show-icon]="true" [show-message]="true" el-class="form-demo"
+(ngSubmit)="topupForm()">
+<el-form-item label="Topup" >
+<el-input formControlName="credit"></el-input>
+</el-form-item>
+
+  </el-form>
+<el-button type="success" icon="el-icon-check" circle (click)="topUp()">Topup</el-button>
+</el-dialog>
+</div>
+
+<div class="box-card" #card>
+  <el-dialog [title]="'Add Member'" [(visible)]="showAddMemberForm">
+<el-form [formGroup]="addMemberForm" label-width="100px" [show-icon]="true" [show-message]="true" el-class="form-demo" (ngSubmit)="addMemberForm()">
+
+<el-form-item label="Room">
+<el-input formControlName="room"></el-input>
+  </el-form-item>
+
+<el-form-item label="Member Name" >
+<el-input formControlName="membername"></el-input>
+</el-form-item>
+
+<el-form-item label="Email">
+<el-input formControlName="mail"></el-input>
+</el-form-item>
+
+<el-form-item label="Telephone" >
+<el-input formControlName="tel"></el-input>
+</el-form-item>
+
+<el-form-item label="Password">
+<el-input formControlName="password" native-type="password" ></el-input>
+  </el-form-item>
+
+<el-form-item label="Credit" >
+<el-input formControlName="credit"></el-input>
+</el-form-item>
+
+  <el-form-item>
+<el-button [plain]="true" type="success" (click)="addMemberAction()">Add</el-button>
+    <el-button (click)="resetAddForm()">Reset</el-button>
+  </el-form-item>
+
+</el-form>
+  </el-dialog>
+</div>
+
+<div class="box-card" #card>
+  <el-dialog [title]="'Update Member'" [(visible)]="updateForm">
+    <el-form [formGroup]="addMemberForm" label-width="100px" [show-icon]="true" [show-message]="true" el-class="form-demo"
+      (ngSubmit)="addMemberForm()">
+
+      <el-form-item label="ID">
+        <el-input formControlName="_id" [elDisabled]="true"></el-input>
+      </el-form-item>
+      <el-form-item label="Room">
+        <el-input formControlName="room"></el-input>
+      </el-form-item>
+
+      <el-form-item label="Member Name">
+        <el-input formControlName="membername"></el-input>
+      </el-form-item>
+
+      <el-form-item label="Email">
+        <el-input formControlName="mail"></el-input>
+      </el-form-item>
+
+      <el-form-item label="Telephone">
+        <el-input formControlName="tel"></el-input>
+      </el-form-item>
+
+      <!-- <el-form-item label="Password">
+        <el-input formControlName="password" native-type="password"></el-input>
+      </el-form-item> -->
+
+      <!-- <el-form-item label="Credit">
+        <el-input formControlName="credit" [elDisabled]="true"></el-input>
+      </el-form-item> -->
+      <el-form-item>
+        <el-button [plain]="true" type="success" (click)="updateMemberAction()">Update</el-button>
+      </el-form-item>
+    </el-form>
+  </el-dialog>
+</div>
+
 </div>
