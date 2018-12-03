@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng server",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
@@ -21,9 +21,16 @@
     "@angular/platform-browser": "^5.2.0",
     "@angular/platform-browser-dynamic": "^5.2.0",
     "@angular/router": "^5.2.0",
+    "angular5-toaster": "^1.0.2",
+    "angularfire2": "^5.0.0-rc.3",
+    "chart.js": "^2.7.2",
     "core-js": "^2.4.1",
+    "element-angular": "^0.7.6",
+    "firebase": "^4.6.1",
     "materialize-css": "^1.0.0-beta",
+    "ngx-toastr": "^8.8.0",
     "rxjs": "^5.5.6",
+    "socket.io": "^2.1.1",
     "zone.js": "^0.8.19"
   },
   "devDependencies": {

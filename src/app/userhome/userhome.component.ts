@@ -11,7 +11,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UserhomeComponent implements OnInit {
 
-  username: String = '';
+ username: String = '';
 
   constructor(private _user: UserService, private _router: Router, private http:HttpClient) {
     this._user.user()
@@ -23,6 +23,7 @@ export class UserhomeComponent implements OnInit {
 
   addName(data) {
     this.username = data.username;
+    console.log(data)
   }
   ngOnInit() {
   }

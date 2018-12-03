@@ -1,28 +1,46 @@
-<div class="row" style="margin-top:40px; padding:20px; background-color:rgb(243, 247, 247);border-radius:15px;
--webkit-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);
--moz-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);
-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);">
-  <div class="col-sm-12" style="text-align:center;">
-    
-  </div>
+<div class="row">
 
-  <div class="col-sm-12">
-    <form [formGroup]="loginForm">
-      <div class="form-group">
-        <label for="exampleInputUsername">Username</label>
-        <input formControlName="username" type="text" class="form-control" id="exampleInputUsername" aria-describedby="userHelp">
-        <small id="userHelp" class="form-text text-muted"></small>
-      </div>
-      <div class="form-group">
-        <label for="passwordInput">Password</label>
-        <input formControlName="password" type="password" class="form-control" id="passwordInput" aria-describedby="passHelp">
-        <small id="passHelp" class="form-text text-muted"></small>
-      </div>
+<el-form [formGroup]="loginForm" label-width="100px"  el-class="form-demo">
+<h5 class="title">System login</h5>
+  <el-form-item label="Username">
+    <el-input formControlName="username"></el-input>
+  </el-form-item>
 
-      <div class="form-group" style="text-align:center;">
-        <button type="button" class="btn btn-dark" (click)="login()">Log in</button>
-        <button type="button" class="btn btn-secondary" (click)="moveToRegister()">Register</button>
-      </div>
-    </form>
-  </div>
+  <el-form-item label="Password">
+    <el-input formControlName="password" native-type="password"></el-input>
+  </el-form-item>
+
+  <el-form-item>
+<el-button type="primary" (click)="login()" [loading]="loading" style="width:100%,center">Login</el-button>
+  </el-form-item>
+<el-form-item>
+<el-button (click)="moveToRegister()" type="primary" style="width:100%,center">Register</el-button>
+  </el-form-item>
+</el-form>
+
+<div class="box-card" #card>
+  <el-dialog [title]="'Register'" [(visible)]="showRegisterForm">
+<el-form [formGroup]="registerForm" label-width="100px" [show-icon]="true" [show-message]="true" el-class="form-demo">
+
+<el-form-item label="Username">
+<el-input formControlName="username"></el-input>
+  </el-form-item>
+
+<el-form-item label="Confirm Password" >
+<el-input formControlName="cpass" native-type="password"></el-input>
+</el-form-item>
+
+<el-form-item label="Password">
+    <el-input formControlName="password" native-type="password"></el-input>
+  </el-form-item>
+
+  <el-form-item>
+<el-button type="primary" (click)="register()">Register</el-button>
+  </el-form-item>
+<el-form-item>
+<el-button type="primary" (click)="resetForm()">Reset</el-button>
+  </el-form-item>
+</el-form>
+  </el-dialog>
+</div>
 </div>

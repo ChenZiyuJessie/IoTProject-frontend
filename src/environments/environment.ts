@@ -4,5 +4,13 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
-};
+  production: false,
+  firebaseConfig: {
+    apiKey: 'AIzaSyBJjn0OUnmvrhQ6RNi-o49DhJJETrrYZtw',
+    authDomain: 'iot-smart-water-2e339.firebaseapp.com',
+    databaseURL: 'https://iot-smart-water-2e339.firebaseio.com',
+    projectId: 'iot-smart-water-2e339',
+    storageBucket: 'iot-smart-water-2e339.appspot.com',
+    messagingSenderId: '180559570099'
+  }
+}
