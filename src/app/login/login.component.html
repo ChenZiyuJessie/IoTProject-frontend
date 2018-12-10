@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" [el-loading]="loadingHomepage" [text]="'Loading'">
 
 <el-form [formGroup]="loginForm" label-width="100px"  el-class="form-demo">
 <h5 class="title">System login</h5>
@@ -11,7 +11,8 @@
   </el-form-item>
 
   <el-form-item>
-<el-button type="primary" (click)="login()" [loading]="loading" style="width:100%,center">Login</el-button>
+<el-button type="primary" (click)="login()" [loading]="loading" style="width:100%,center" [el-loading]="loading"
+[full-screen]="true" [text]="'Loading'">Login</el-button>
   </el-form-item>
 <el-form-item>
 <el-button (click)="moveToRegister()" type="primary" style="width:100%,center">Register</el-button>

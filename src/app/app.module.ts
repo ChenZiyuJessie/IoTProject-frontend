@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core'
 import { AppComponent } from './app.component'
 import { LoginComponent } from './login/login.component'
 import { ReactiveFormsModule, FormsModule } from '@angular/forms'
-import { UserhomeComponent } from './userhome/userhome.component'
 import { AppRoutingModule } from './/app-routing.module'
 import { UserService } from './user.service'
 import { HttpClientModule } from '@angular/common/http'
@@ -21,7 +20,6 @@ import { ElModule } from 'element-angular'
 @NgModule({
   declarations: [
     AppComponent,
-    UserhomeComponent,
     LoginComponent,
     NavbarComponent,
     MemberComponent,

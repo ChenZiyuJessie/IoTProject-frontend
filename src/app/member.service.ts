@@ -9,8 +9,6 @@ export interface Members {
    tel: string;
    credit: string;
   creation_dt: string;
-
-
 }
 
 @Injectable()

@@ -1,11 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core'
 import { Router } from '@angular/router'
-import {
-  FormGroup,
-  FormControl,
-  Validators,
-  FormBuilder
-} from '@angular/forms'
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 import { UserService } from '../user.service'
 declare var M: any
 
@@ -58,7 +53,8 @@ export class LoginComponent implements OnInit {
       data => {
         console.log(data)
         M.toast({ html: 'Login successfully', classes: 'rounded' })
-        this._router.navigate(['/user'])
+        this._router.navigate(['/member'])
+        window.location.reload()
       },
       error => console.error(error)
     )

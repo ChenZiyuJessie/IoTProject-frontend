@@ -3,9 +3,13 @@
   <div class="nav-wrapper">
 <a href="#" class="brand-logo center">IoT Smart Water System</a>
     <ul id="nav-mobile" class="left hide-on-med-and-down">
-<li><a [routerLink]="['/user']" routerLinkActive="active">Home Page</a></li>
-<li><a [routerLink]="['/login']" routerLinkActive="active">Login</a></li>
-<li><a [routerLink]="['/report']" routerLinkActive="active">Report</a></li>
+<li><a [routerLink]="['/member']" routerLinkActive="active" *ngIf="showHome">Home Page</a></li>
+<li><a (click)="login()" routerLinkActive="active" *ngIf="showLogin">Login</a></li>
+<li><a [routerLink]="['/report']" routerLinkActive="active" *ngIf="showReport">Report</a></li>
     </ul>
+<ul id="nav-mobile" class="right hide-on-med-and-down">
+<li><a *ngIf="showUsername">Hello,{{username}}!</a></li>
+<li> <a class="btn btn btn-primary" role="button" *ngIf="showLogout"(click)="logout()">Logout</a></li>
+</ul>
   </div>
 </nav>
