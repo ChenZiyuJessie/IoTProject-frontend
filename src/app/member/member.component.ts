@@ -1,10 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core'
-import { MemberService, Members } from '../member.service'
-import {
-  Validators,
-  FormBuilder,
-  FormGroup
-} from '@angular/forms'
+import { MemberService, Members } from './member.service'
+import { Validators, FormBuilder, FormGroup } from '@angular/forms'
+import { ElNotificationService } from 'element-angular'
+import * as moment from 'moment'
 
 declare var M: any
 @Component({
@@ -18,10 +16,12 @@ export class MemberComponent implements OnInit {
   addMemberForm: FormGroup
   updateForm: boolean
   tableData: Members[] = []
+  minNum: 0
 
   constructor(
     private _member: MemberService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private notify: ElNotificationService
   ) {
     this.addMemberForm = this.formBuilder.group({
       _id: [null, Validators.nullValidator],
@@ -29,8 +29,8 @@ export class MemberComponent implements OnInit {
       membername: ['', Validators.required],
       mail: ['', [Validators.email]],
       tel: ['', Validators.required],
-      password: ['', [Validators.required,Validators.minLength(6)]],
-      credit: ['', [Validators.maxLength(3), Validators.required]]
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      credit: [, Validators.min(this.minNum)]
     })
   }
 
@@ -121,7 +121,7 @@ export class MemberComponent implements OnInit {
   resetAddForm() {
     this.addMemberForm.reset()
   }
-  topUp() {
+  topUp(type: string) {
     this._member
       .topUp(
         this.addMemberForm.value._id,
@@ -132,7 +132,7 @@ export class MemberComponent implements OnInit {
           console.log(data)
           this.getmember()
           this.topupForm = false
-          M.toast({ html: 'Topup successfully', classes: 'rounded' })
+          this.notify[type]('Topup Successfully')
         },
         error => console.error(error)
       )

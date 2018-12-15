@@ -48,7 +48,6 @@ export class LoginComponent implements OnInit {
       return
     }
     this.loading = true
-
     this._user.login(JSON.stringify(this.loginForm.value)).subscribe(
       data => {
         console.log(data)
@@ -56,7 +55,11 @@ export class LoginComponent implements OnInit {
         this._router.navigate(['/member'])
         window.location.reload()
       },
-      error => console.error(error)
+      error => {
+        console.log(error)
+        M.toast({ html: 'Invalid account or password', classes: 'rounded' })
+        this.loading = false
+      }
     )
   }
 
